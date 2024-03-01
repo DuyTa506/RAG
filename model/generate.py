@@ -10,7 +10,7 @@ def remove_special_tokens(text, tokenizer):
 
     return filtered_text
 
-def generate(prompt, tokenizer, model, max_new_tokens=1024):
+def generate(prompt, tokenizer, model, max_new_tokens=512):
     """Text completion with a given prompt. In other words, give an answer to your question.
     Args:
         prompt (str): Basically <instruction> + <question> + <retrieved_context>
