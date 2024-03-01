@@ -19,7 +19,7 @@ def gen_question(question, embed_model=None, corpus=None, bm25=None, embedding_c
         smoothed_contexts = smooth_contexts(top_passages, corpus, word_window=60, n_sent=3)
     
     prompt = get_prompt(question, smoothed_contexts)
-    print(prompt)
+    #print(prompt)
     return prompt
 
 
