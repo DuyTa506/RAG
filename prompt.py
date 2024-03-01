@@ -6,9 +6,9 @@ prompt_template = (
     "### Response:\n{output}"
 )
 
-def history_buffer(n = 1): 
-    from langchain.memory import ConversationBufferWindowMemory(k=n)
-    memory.save_context({"input": "not much you"}, {"output": "not much"})
+#def history_buffer(n = 1): 
+    #from langchain.memory import ConversationBufferWindowMemory(k=n)
+    #memory.save_context({"input": "not much you"}, {"output": "not much"})
 
 def get_prompt(question, contexts):
     if not contexts:
