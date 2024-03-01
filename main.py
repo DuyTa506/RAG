@@ -19,7 +19,7 @@ def generate_answer(question, llm_model, tokenizer, embedding_model, bm25, embed
     result = generate(prompt=prompt, model=llm_model, tokenizer=tokenizer)
     return result
 
-def generate_answer(question, llm_model, tokenizer, embedding_model, bm25, embedding_corpus, meta_corpus):
+def generate_answer_with_api(question, llm_model, tokenizer, embedding_model, bm25, embedding_corpus, meta_corpus):
     prompt = gen_question(question, embed_model=embedding_model, bm25=bm25, corpus=meta_corpus, embedding_corpus=embedding_corpus, topk=10)
     result = generate_with_api(prompt=prompt, model=llm_model, tokenizer=tokenizer)
     return result
