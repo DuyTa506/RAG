@@ -34,7 +34,7 @@ def generate_answer_endpoint(question_data: Question):
 
         question = question_data.question
 
-        response = generate_answer_with_api(question=question, llm_model=llm_model, tokenizer=token,
+        response = generate_answer(question=question, llm_model=llm_model, tokenizer=token,
                                    bm25=bm25, embedding_corpus=embedding_corpus, meta_corpus=meta_corpus,
                                    embedding_model=embedding_model)
 
