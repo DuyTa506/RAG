@@ -48,7 +48,7 @@ def generate(prompt, tokenizer, model, max_new_tokens=1024):
     output = output.split(tokenizer.eos_token)[0]
     return output.strip()
 
-def generate_with_api(prompt, tokenizer, model, max_new_tokens=1024):
+def generate_with_api(prompt, tokenizer, model, max_new_tokens=512):
     """Text completion with a given prompt. In other words, give an answer to your question.
     Args:
         prompt (str): Basically <instruction> + <question> + <retrieved_context>
