@@ -1,6 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from constant import llm_model_name, llm_token, embedding_path, corpus_embedding, data_path
-from model.generate import generate
+from model.generate import generate, generate_with_api
 from context_gen import gen_question, load_context, load_embed_model
 import torch
 def load_llm(llm_model_name, llm_token):
@@ -17,6 +17,11 @@ def load_llm(llm_model_name, llm_token):
 def generate_answer(question, llm_model, tokenizer, embedding_model, bm25, embedding_corpus, meta_corpus):
     prompt = gen_question(question, embed_model=embedding_model, bm25=bm25, corpus=meta_corpus, embedding_corpus=embedding_corpus, topk=10)
     result = generate(prompt=prompt, model=llm_model, tokenizer=tokenizer)
+    return result
+
+def generate_answer(question, llm_model, tokenizer, embedding_model, bm25, embedding_corpus, meta_corpus):
+    prompt = gen_question(question, embed_model=embedding_model, bm25=bm25, corpus=meta_corpus, embedding_corpus=embedding_corpus, topk=10)
+    result = generate_with_api(prompt=prompt, model=llm_model, tokenizer=tokenizer)
     return result
 
 if __name__ == "__main__":
