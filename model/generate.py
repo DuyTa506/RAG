@@ -79,8 +79,7 @@ def generate_with_api(prompt, tokenizer, model, max_new_tokens=512):
         generated = model.generate(
             inputs=input_ids,
             generation_config=generation_config,
-            max_length=input_ids.shape[1] + max_new_tokens,
-            num_beams=5,  # You can adjust the number of beams for beam search
+            num_beams=1,  # You can adjust the number of beams for beam search
         )
 
     gen_tokens = generated[0].cpu()
