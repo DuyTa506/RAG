@@ -1,0 +1,5 @@
+embedding_path = "bkai-foundation-models/vietnamese-bi-encoder"
+llm_model_name = "Viet-Mistral/Vistral-7B-Chat"
+llm_token = "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"
+data_path = "/app/duy55/Viet_Mistral/data/corpus_chunks.jsonl"
+corpus_embedding = "/app/duy55/Viet_Mistral/data/corpus_embedding_all.pkl"
